@@ -7,8 +7,15 @@ public class Move : MonoBehaviour
 {
     [SerializeField] private Vector3 _position;
 
+    private int _duration;
+
+    private void Awake()
+    {
+        _duration = 10;
+    }
+
     private void Start()
     {
-        transform.DOMove(_position, 10).SetLoops(-1, LoopType.Yoyo);
+        transform.DOMove(_position, _duration).SetLoops(-1, LoopType.Yoyo);
     }
 }

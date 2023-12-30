@@ -4,17 +4,19 @@ using UnityEngine;
 using DG.Tweening;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class ChangeColor : MonoBehaviour
+public class ColorChanger : MonoBehaviour
 {
     private SpriteRenderer _renderer;
+    private int _duration;
 
     private void Awake()
     {
+        _duration = 2;
         _renderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        _renderer.DOColor(Color.red, 2).SetLoops(-1, LoopType.Yoyo);
+        _renderer.DOColor(Color.red, _duration).SetLoops(-1, LoopType.Yoyo);
     }
 }
